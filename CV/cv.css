@@ -1,0 +1,49 @@
+.css {
+    display: grid;
+    width: auto;
+    height: auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    box-shadow: 0 5px 9px 0 rgba(0, 0, 0, 0.35);
+    grid-gap: 5px;
+    grid-template-areas:
+        "FullName ProfilePic"
+        "Education Information "
+        "Jobs Information"
+        "Skills Skills";
+}
+
+.grid-area {
+    padding: 1em 1em 1em 1em;
+    border: 1px black solid;
+    background: rgb(125, 155, 211);
+}
+
+.FullName {
+    grid-area: FullName;
+    background: rgb(125, 155, 211);
+}
+
+.ProfilePic {
+    grid-area: ProfilePic;
+    background: rgb(202, 240, 248);
+}
+
+.Education {
+    grid-area: Education;
+    background: rgb(202, 240, 248);
+}
+
+.Skills {
+    grid-area: Skills;
+    background: rgb(202, 240, 248);
+}
+
+.Information {
+    grid-area: Information;
+    background: rgb(202, 240, 248);
+}
+.Jobs {
+    grid-area: Jobs;
+    background: rgb(202, 240, 248);
+}

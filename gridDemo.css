@@ -1,0 +1,26 @@
+* {
+    background-color: aqua;
+    padding: 50px;
+    border: gray solid;
+
+}
+.grid-container {
+    display: grid;
+    grid-template-areas: 'myArea myArea myArea'
+    'navBar main main'
+    'navBar main main'
+;
+}
+
+.item1 {
+    grid-area: myArea;
+    grid-column: 1 / span 3;
+}
+.item2{
+    grid-area: navBar;
+grid-column: 2 / span 2;
+}
+.item3{
+    grid-area: main;
+grid-column: 3 / span 2;
+}
