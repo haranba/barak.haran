@@ -1,10 +1,10 @@
 // button with function that change attribute.
 function click1() {
-    document.body.innerHTML = document.body.innerHTML.replace("big dream", "Make the right thing to do the easy thing to do.");
+    document.body.innerHTML = document.body.innerHTML.replace("creative", "leader");
 }
 
 function click2() {
-    document.body.innerHTML = document.body.innerHTML.replace("Make the right thing to do the easy thing to do.", "big dream");
+    document.body.innerHTML = document.body.innerHTML.replace("leader", "creative");
 }
 
 var ck_name = /^[A-Za-z0-9 ]{3,20}$/;

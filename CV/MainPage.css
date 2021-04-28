@@ -17,9 +17,10 @@
     border: 1px black solid;
     background: rgb(125, 155, 211);
 }
-
+h1 {
+  font-size: 60px;
+}
 .Fullname {
-    font-size: 60px;
     grid-area: Fullname;
     background-color: rgb(195, 224, 248);
 }
@@ -29,7 +30,7 @@
     background-color: rgb(195, 224, 248);
 }
 
-.MyMoto {
+.myAdvantages {
     grid-area: MyMoto;
     background-color: rgb(195, 224, 248);
 }

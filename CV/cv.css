@@ -12,7 +12,12 @@
         "Jobs Information"
         "Skills Skills";
 }
-
+h1 {
+  font-size: 60px;
+}
+h2 {
+  font-size: 40px;
+}
 .grid-area {
     padding: 1em 1em 1em 1em;
     border: 1px black solid;
@@ -51,22 +56,30 @@
 .btn1 {
     background: #4444db;
     color: #fff;
+    width: 100px;
+    height: 50px;
 }
 
 /* Button 2 */
 .btn2 {
     background: #3ecc87;
     color: #fff;
+    width: 100px;
+    height: 50px;
 }
 
 /* Button 3 */
 .btn3 {
     background: #e83c56;
     color: #fff;
+    width: 100px;
+    height: 50px;
 }
 
 /* Button 4 */
 .btn4 {
     background: #34495e;
     color: #fff;
+    width: 100px;
+    height: 50px;
 }
