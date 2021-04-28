@@ -47,3 +47,26 @@
     grid-area: Jobs;
     background: rgb(202, 240, 248);
 }
+/* Button 1 */
+.btn1 {
+    background: #4444db;
+    color: #fff;
+}
+
+/* Button 2 */
+.btn2 {
+    background: #3ecc87;
+    color: #fff;
+}
+
+/* Button 3 */
+.btn3 {
+    background: #e83c56;
+    color: #fff;
+}
+
+/* Button 4 */
+.btn4 {
+    background: #34495e;
+    color: #fff;
+}

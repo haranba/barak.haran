@@ -1,0 +1,58 @@
+<!doctype html>
+<link rel="stylesheet" href="message.css">
+
+<title>Massage</title>
+<style>
+    .message1 {
+        margin-right: 8em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact {
+        flex: 1;
+    }
+
+    .Form {
+        display: flex;
+        background-color: rgb(100, 170, 248);
+        border-radius: 10px;
+        padding: 5em;
+    }
+
+    .contact input {
+        width: 100%;
+    }
+
+    .contact input,
+    .contact button {
+        padding: 1em;
+        margin-bottom: 1em;
+    }
+
+    .contact button {
+        background: gray;
+        color: white;
+        border: 0;
+    }
+</style>
+<form class="Form"  method="post" action="#" onSubmit="return validate(this);" name="form">
+    <div class="message1" >
+        <label for="msg">Message</label>
+        <textarea id="msg" cols="100" rows="15" placeholder="Write something.."></textarea>
+    </div>
+    <div class="contact">
+        <label for="name">Name Or company</label>
+        <input type="text" id="name" >
+
+        <script src="js1.js"></script>
+        <br>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" id="email">
+        <br>
+        <button class="glow-on-hover" type="submit" onclick="ValidateName()">Submit</button>
+    </div>
+</form>
