@@ -11,3 +11,5 @@
 תרגיל 6 - WEB - Contact
 <img width="959" alt="message" src="https://user-images.githubusercontent.com/63109200/116409966-037e1c80-a83d-11eb-8d9c-0b2d5f05f8fd.PNG">
 
+תרגיל 6 - WEB - Contact list
+![image](https://user-images.githubusercontent.com/63109200/117529742-edf9b700-afe1-11eb-9bf1-78e2e3d23689.png)
