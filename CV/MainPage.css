@@ -47,6 +47,7 @@ h1 {
 }
 
 .glow-on-hover {
+    font-size: 20px;
     width: 200px;
     height: 100px;
     border: none;
@@ -59,4 +60,3 @@ h1 {
     margin: 80px 40px 20px;
     border-radius: 10px;
 }
-
