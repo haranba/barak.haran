@@ -6,7 +6,7 @@
     }
 </style>
 <main class="grid-container">
-    <link rel="stylesheet" href="{{ url_for('static', filename='CV/css/mainPage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mainPage.css') }}">
     <article class="MainPage">
 
         <div class="grid-area FullName">
@@ -14,19 +14,19 @@
         </div>
 
         <div class="grid-area bgu">
-            <img src="../static/CV/photos/bgu.PNG" width="210" height="125">
+            <img src="../static/photos/bgu.PNG" width="410" height="225" >
         </div>
 
         <div class="grid-area myAdvantages">
-            <button class="glow-on-hover" onclick="click2()">First advantage</button>
-            <button class="glow-on-hover" onclick="click1()">Second advantage</button>
+            <button class="glow-on-hover1" onclick="click2()">First advantage</button>
+            <button class="glow-on-hover1" onclick="click1()">Second advantage</button>
         </div>
 
         <div class="grid-area text1">
             <p>
                 creative
             </p>
-            <script src="../static/CV/js/js1.js"></script>
+            <script src="../static/js/js1.js"></script>
         </div>
 
         <div class="grid-area Information">
@@ -42,8 +42,11 @@
              <a href="/contactList">
                 <button class="glow-on-hover">Contact List</button>
             </a>
-             <a href="/hobbies">
-                <button class="glow-on-hover">my hobbies</button>
+             <a href="/my_Hobbies">
+                <button class="glow-on-hover">My hobbies</button>
+            </a>
+             <a href="/assignment9">
+                <button class="glow-on-hover">Search</button>
             </a>
         </div>
     </article>

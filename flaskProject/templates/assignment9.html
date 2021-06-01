@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/assignment9.css') }}">
+<article class="assignment9">
+
+    <head>
+        <meta charset="UTF-8">
+        <title> Assignment 9 </title>
+    </head>
+
+    <body>
+    Search First Name:
+    <form method="GET" action="/assignment9">
+        <input name="firstname" type="text">
+        <input type=submit value="search">
+    </form>
+    {% if firstname %}
+        {% for user in MyUsers %}
+            {% if user['firstname'] == firstname %}
+                <h3> Full name: {{ user['firstname'] }},{{ user['lastname'] }} , email: {{ user['email'] }}<br>
+                <h3>
+                <br>
+            {% endif %}
+        {% endfor %}
+        <br>
+    {% else %}
+        {% for user in MyUsers %}
+            <h3> Full name: {{ user['firstname'] }},{{ user['lastname'] }} , email: {{ user['email'] }}<br>
+            <h3>
+            <br>
+        {% endfor %}
+    {% endif %}
+    <br>
+    {% if username %}
+        <h1> welcome {{ username }}</h1>
+    {% else %}
+        Enter Username
+        <form method="POST" action="/assignment9">
+            <input name="username">
+            <input type=submit>
+        </form>
+    {% endif %}
+
+    {% if username %}
+        <form action="/assignment9" method="Post">
+            <input type="submit">
+        </form>
+    {% endif %}
+
+    {% if session.LoggedIn %}
+        <h2> hello, {{ session.get('username') }}</h2>
+    {% else %}
+        welcome my friend
+    {% endif %}
+
+    {% include('homeBtn.html') %}
+
+    </body>
+</article>
+</html>

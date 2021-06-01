@@ -1,45 +1,46 @@
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="{{ url_for('static', filename='CV/css/assignment8.css') }}">
-<article class="ass8">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/assignment8.css') }}">
 
     <head>
         <title>My Hobbies</title>
     </head>
+
     <body>
 
-    {% block hobbie %}
+    {% block my_Hobbies %}
         {% set Name = 'barak website' %}
     {% endblock %}
 
     {% if name %}
         <h1><span> {{ name | default('My', true)|upper }} Hobbies</span></h1>
-            <h2>travel:</h2>
-            {% for travel1 in travel %}
-                <h3>{{ travel1 }}</h3>
-            {% endfor %}
-            <hr></hr>
+        <h2>travel:</h2>
+        {% for travel1 in travel %}
+            <h3>{{ travel1 }}</h3>
+        {% endfor %}
+        <hr>
 
-            <h2>Sport:</h2>
-            {% for sport1 in sport %}
-                <h3>{{ sport1 }}</h3>
-            {% endfor %}
-            <hr></hr>
 
-            <h2>movie:</h2>
-            {% for movie1 in movie %}
-                <h3>{{ movie1 }}</h3>
-            {% endfor %}
+        <h2>Sport:</h2>
+        {% for sport1 in sport %}
+            <h3>{{ sport1 }}</h3>
+        {% endfor %}
+        <hr>
 
-            <hr></hr>
-            {% include('includeFunc.html') %}
+        <h2>movie:</h2>
+        {% for movie1 in movie %}
+            <h3>{{ movie1 }}</h3>
+        {% endfor %}
+
+        <hr>
+        {% include('homeBtn.html') %}
     {% else %}
         <h1>My hobbies are hidden</h1>
     {% endif %}
 
 
     </body>
-</article>
+
 
 </html>
