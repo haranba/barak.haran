@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, Blueprint, flash, redirect
+import mysql.connector
 
 app = Flask(__name__)
 app.secret_key = '123'
@@ -77,3 +78,74 @@ def block():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+assignment10 = Blueprint('assignment10', __name__,
+                         static_folder='static',
+                         static_url_path='/assignment10',
+                         template_folder='templates')
+
+
+def interact_db(query, query_type: str):
+    return_value = False
+    connection = mysql.connector.connect(host='localhost',
+                                         user='root',
+                                         passwd='barak123',
+                                         database='assigment10')
+    cursor = connection.cursor(named_tuple=True)
+    cursor.execute(query)
+
+    if query_type == 'commit':
+        connection.commit()
+        return_value = True
+
+    if query_type == 'fetch':
+        query_result = cursor.fetchall()
+        return_value = query_result
+
+    connection.close()
+    cursor.close()
+    return return_value
+
+
+@app.route('/assignment10', methods=['GET', 'POST'])
+def assignment10():
+    return render_template('assignment10.html')
+
+
+@app.route('/users', methods=['GET', 'POST'])
+def users():
+    query = "select * from users"
+    query_result = interact_db(query=query, query_type='fetch')
+    return render_template('users.html', users=query_result)
+
+
+@app.route('/INSERT', methods=['GET', 'POST'])
+def insert_user():
+    if request.method == 'POST':
+        email = request.form['email']
+        firstname = request.form['firstname']
+        lastname = request.form['lastname']
+        query = "INSERT INTO users(email, firstname, lastname) VALUES ('%s', '%s', '%s')" % (
+            email, firstname, lastname)
+        interact_db(query=query, query_type='commit')
+        return redirect('/users')
+    return render_template('assignment10.html', req_method=request.method)
+
+
+@app.route('/DELETE', methods=['GET', 'POST'])
+def delete_user():
+    if request.method == 'POST':
+        id2 = request.args['id']
+        query = "DELETE FROM users Where id='%s';" % id2
+        interact_db(query=query, query_type='commit')
+        return redirect('/assignment10')
+
+
+@app.route('/UPDATE', methods=['GET', 'POST'])
+def update_user():
+    if request.method == 'POST':
+        firstname = request.args['firstname']
+        id2 = request.args['id']
+        query = "UPDATE users SET age = %s WHERE ID= %s" % (firstname, id2)
+        interact_db(query=query, query_type='commit')
+        return redirect('/assignment10')
