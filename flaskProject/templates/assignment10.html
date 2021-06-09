@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h2> insert user:</h2>
-{{ req_method }}
-<form action="/INSERT" method="POST">
-    <label><input name="email" type="email" placeholder="your email"> </label>
-    <label><input name="firstname" type="text" placeholder="your first name"></label>
-    <label><input name="lastname" type="text" placeholder="your last name"> </label>
-    <input type="submit">
-</form>
-
-<h2> Delete user:</h2>
-<form action="/DELETE" method="POST">
-    <label><input name="id" type="text" placeholder="user ID:"> </label>
-    <input type="submit">
-</form>
-
-<h2> update user:</h2>
-<form action="/UPDATE" method="POST">
-
-    <label><input name="id" type="text" placeholder="user ID:"> </label>
-    <label><input name="email" type="email" placeholder="your name"> </label>
-    <label><input name="firstname" type="text" placeholder="your first name"></label>
-    <label><input name="lastname" type="text" placeholder="your last name"> </label>
-    <input type="submit">
-</form>
-
-</body>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/assignment10.css') }}">
+<article class="assignment10">
+    <head>
+        <meta charset="UTF-8">
+        <title>users</title>
+    </head>
+    <body>
+    <h1>users</h1>
+    <ul>
+        {% if users %}
+            {% for user in users %}
+                <li>
+                    {{ user.id }}: <b> {{ user.firstname }} {{ user.lastname }}</b> , {{ user.email }}
+                    <br>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+    <a href="/assignment10">
+        <button class="glow-on-hover" type="button">back</button>
+    </a>
+    </body>
+</article>
 </html>

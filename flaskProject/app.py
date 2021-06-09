@@ -109,14 +109,14 @@ def interact_db(query, query_type: str):
 
 @app.route('/assignment10', methods=['GET', 'POST'])
 def assignment10():
-    return render_template('assignment10.html')
+    return render_template('InsertUpdateDelete.html')
 
 
 @app.route('/users', methods=['GET', 'POST'])
 def users():
     query = "select * from users"
     query_result = interact_db(query=query, query_type='fetch')
-    return render_template('users.html', users=query_result)
+    return render_template('assignment10.html', users=query_result)
 
 
 @app.route('/INSERT', methods=['GET', 'POST'])
@@ -134,18 +134,20 @@ def insert_user():
 
 @app.route('/DELETE', methods=['GET', 'POST'])
 def delete_user():
-    if request.method == 'POST':
+    if request.method == 'GET':
         id2 = request.args['id']
         query = "DELETE FROM users Where id='%s';" % id2
         interact_db(query=query, query_type='commit')
-        return redirect('/assignment10')
+        return redirect('/users')
+    return render_template('assignment10.html', req_method=request.method)
 
 
 @app.route('/UPDATE', methods=['GET', 'POST'])
 def update_user():
-    if request.method == 'POST':
-        firstname = request.args['firstname']
+    if request.method == 'GET':
+        email = request.form['email']
         id2 = request.args['id']
-        query = "UPDATE users SET age = %s WHERE ID= %s" % (firstname, id2)
+        query = "UPDATE users SET email = %s WHERE id= %s" % (email, id2)
         interact_db(query=query, query_type='commit')
-        return redirect('/assignment10')
+        return redirect('/users')
+    return render_template('assignment10.html', req_method=request.method)

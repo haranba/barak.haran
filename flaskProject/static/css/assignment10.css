@@ -1,0 +1,17 @@
+.assignment10 {
+    text-align: center;
+    font-family: Tahoma, sans-serif;
+    width: auto;
+    height: auto;
+    color: #2c3e50;
+    font-size: 40px;
+    background-color:lightblue;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #2c4850;
+
+}
