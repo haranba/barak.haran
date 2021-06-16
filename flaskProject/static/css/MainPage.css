@@ -18,13 +18,17 @@
     border: 1px black solid;
     background: rgb(125, 155, 211);
 }
+
 h1 {
-  font-size: 40px;
+    font-size: 40px;
 }
+
 .Fullname {
     grid-area: Fullname;
     background: rgb(125, 155, 211);
     text-align-all: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+
 }
 
 .bgu {
@@ -62,6 +66,7 @@ h1 {
     margin: 70px 30px 20px;
     border-radius: 10px;
 }
+
 .glow-on-hover1 {
     font-size: 20px;
     width: 250px;
@@ -75,4 +80,8 @@ h1 {
     z-index: 0;
     margin: 40px 40px 20px;
     border-radius: 10px;
+}
+
+.h1{
+    font-family: "Lucida Console", "Courier New", monospace;
 }
